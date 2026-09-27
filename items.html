@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Items - Lost & Found</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Lost & Found Management</h1>
+        </nav>
+    </header>
+    <div class="logout-bar">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <main class="items-page">
+        <div class="container">
+            <h2>All Items</h2>
+            <div class="filters">
+                <input type="text" id="search-bar" placeholder="Search items...">
+                <select id="filter-select">
+                    <option value="all">All</option>
+                    <option value="lost">Lost</option>
+                    <option value="found">Found</option>
+                </select>
+            </div>
+            <div class="items-grid" id="items-container">
+                <!-- Cards will be populated by JS -->
+            </div>
+            <div id="chat-container" class="chat-container hidden">
+                <div class="chat-messages" id="messages"></div>
+                <input type="text" id="chat-input" placeholder="Type a message..." />
+                <button id="send-btn" class="btn">Send</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Lost & Found Management. All rights reserved.</p>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

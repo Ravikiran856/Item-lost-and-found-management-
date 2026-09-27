@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Lost & Found</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Lost & Found Management</h1>
+        </nav>
+    </header>
+    <div class="logout-bar">
+        <button id="notification-btn" class="notification-btn" type="button">🔔</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <main class="dashboard-page">
+        <div class="container">
+            <h2>Welcome to Dashboard</h2>
+            <div class="dashboard-options">
+                <div class="card option-card">
+                    <h3>Report Lost Item</h3>
+                    <p>Report an item you have lost.</p>
+                    <button class="btn" onclick="location.href='add-item.html?lost'">Add Lost Item</button>
+                </div>
+                <div class="card option-card">
+                    <h3>Report Found Item</h3>
+                    <p>Report an item you have found.</p>
+                    <button class="btn" onclick="location.href='add-item.html?found'">Add Found Item</button>
+                </div>
+                <div class="card option-card">
+                    <h3>View All Items</h3>
+                    <p>Browse all reported items.</p>
+                    <button class="btn" onclick="location.href='items.html'">View All Items</button>
+                </div>
+                <div class="card option-card">
+                    <h3>Potential Matches</h3>
+                    <p>Find potential matches for your lost items.</p>
+                    <button class="btn" onclick="showMatches()">Find Matches</button>
+                </div>
+
+            </div>
+            <div id="notifications" class="notifications hidden">
+                <h3>Notifications</h3>
+                <div id="notification-list">
+                    <div id="no-messages">No messages</div>
+                </div>
+            </div>
+            <div id="matches-container" class="matches-container hidden">
+                <h3>Potential Matches</h3>
+                <div id="matches-list"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Lost & Found Management. All rights reserved.</p>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
